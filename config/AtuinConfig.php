@@ -1,6 +1,6 @@
 <?php
 
-namespace atuin\apps\user\config;
+namespace atuin\user\config;
 
 use amnah\yii2\user\models\Profile;
 use amnah\yii2\user\models\User;
