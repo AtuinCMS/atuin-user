@@ -1,0 +1,20 @@
+{
+    "name": "atuin/user",
+    "description": "Atuin authentication module based on amnah/yii2-user module",
+    "keywords": ["yii", "yii2", "user", "auth", "authentication", "atuin"],
+    "type": "yii2-extension",
+    "version": "0.1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joseba",
+            "email": "joseba.juaniz@gmail.com"
+        }
+    ],
+    "require": {
+        "amnah/yii2-user": "*"
+    },
+    "autoload": {
+        "psr-4": { "atuin\\user\\": "" }
+    }
+}
