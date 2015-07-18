@@ -85,7 +85,7 @@ class AtuinConfig extends \atuin\skeleton\config\AtuinConfig
             FALSE, FALSE);
 
         // Adding bootstrap calling to this module
-        ModelConfig::addConfig(NULL, 'bootstrap', NULL, NULL,
+        ModelConfig::addConfig(NULL, NULL, NULL, 'bootstrap',
             'user', FALSE);
 
         // Setting translations for user app
