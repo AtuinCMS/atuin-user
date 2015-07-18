@@ -11,9 +11,6 @@
             "email": "joseba.juaniz@gmail.com"
         }
     ],
-    "require": {
-        "amnah/yii2-user": "*"
-    },
     "autoload": {
         "psr-4": { "atuin\\atuin\\user\\": "" }
     }
