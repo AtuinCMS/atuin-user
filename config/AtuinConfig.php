@@ -101,7 +101,7 @@ class AtuinConfig extends \atuin\skeleton\config\AtuinConfig
         ModelConfig::addConfig(NULL, 'components', 'view', 'theme',
             [
                 'pathMap' => [
-                    '@vendor/amnah/yii2-user/views' => '@atuinPath/apps/user/views'
+                    '@vendor/amnah/yii2-user/views' => '@vendor/atuin/atuin-user/views'
                 ]
             ], FALSE);
 
