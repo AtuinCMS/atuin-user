@@ -9,8 +9,8 @@ class Module extends \atuin\skeleton\ComposerModule
     protected static $_id = 'atuin-user';
 
     protected static $_version = '0.0';
-    
-    
+
+
     /**
      * Checks if is a core module, atuin won't be able to uninstall or deactivate this module
      *
@@ -30,11 +30,9 @@ class Module extends \atuin\skeleton\ComposerModule
      * @var int
      */
     public $is_frontend = 1;
+    
+    protected $composerPackage = 'amnah/yii2-user';
 
-
-    public function getComposerPackageData()
-    {
-        return 'amnah/yii2-user:dev-master';
-    }
+    protected $composerVersion = 'dev-master';
 
 }
