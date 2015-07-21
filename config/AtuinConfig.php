@@ -93,7 +93,15 @@ class AtuinConfig extends \atuin\skeleton\config\AtuinConfig
             [
                 'user' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@vendor/amnah/yii2-user/messages', // example: @app/messages/fr/user.php
+                    'basePath' => '@vendor/amnah/yii2-user/messages',
+                ]
+            ], FALSE);
+
+        ModelConfig::addConfig(NULL, 'components', 'i18n', 'translations',
+            [
+                'atuin-user' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@vendor/atuin/atuin-user/messages',
                 ]
             ], FALSE);
 

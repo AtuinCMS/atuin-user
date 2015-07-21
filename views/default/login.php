@@ -19,6 +19,23 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p><?= Yii::t("user", "Please fill out the following fields to login:") ?></p>
 
+
+    <?php
+    if (\atuin\user\helpers\SessionHelper::checkSession() == FALSE) {
+        ?>
+        <div class="alert alert-danger alert-dismissable">
+            <h4>
+                <i class="icon fa fa-ban"></i>
+                <?= Yii::t('atuin-user', 'Alert!') ?>
+            </h4>
+            <?= Yii::t('atuin-user', "The session directory in your system '{directory}' it's not writable by the PHP user, please fix this directory's permissions before logging in the Atuin system.",
+                ['directory' => \atuin\user\helpers\SessionHelper::getSessionPath()]) ?>
+        </div>
+    <?php
+    }
+    ?>
+
+
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
         'options' => ['class' => 'form-horizontal'],
@@ -37,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="form-group">
         <div class="col-lg-offset-2 col-lg-10">
-            <?= Html::submitButton(Yii::t('user', 'Login'), ['class' => 'btn btn-primary']) ?>
+            <?= Html::submitButton(Yii::t('user', 'Login'), ['class' => 'btn btn-primary', 'disabled' => ((\atuin\user\helpers\SessionHelper::checkSession()) ? FALSE : TRUE)]) ?>
 
             <br/><br/>
             <?= Html::a(Yii::t("user", "Register"), ["/user/register"]) ?> /
