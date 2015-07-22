@@ -52,3 +52,4 @@ Route::any('user/view', 'user/admin/view');
 Route::any('user/create', 'user/admin/create');
 Route::any('user/update', 'user/admin/update');
 Route::any('user/delete', 'user/admin/delete');
+Route::any('user/profile', 'atuin-user/user/profile');
