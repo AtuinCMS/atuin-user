@@ -13,16 +13,17 @@ use yii\widgets\ActiveForm;
 $this->title = Yii::t('user', 'Login');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-default-login">
 
-    <div class="box">
+<div class="content-header">
+    <h2><?= Html::encode($this->title) ?></h2>
+</div>
 
-        <div class="box-header with-border">
-            <h2><?= Html::encode($this->title) ?></h2>
-        </div>
+<div class="content body">
+    <div class="box box-default">
         <div class="box-body">
-            <span id="helpBlock" class="help-block"><?= Yii::t("user", "Please fill out the following fields to login:") ?></span>
-            
+            <span id="helpBlock"
+                  class="help-block"><?= Yii::t("user", "Please fill out the following fields to login:") ?></span>
+
             <?php
             if (\atuin\user\helpers\SessionHelper::checkSession() == FALSE)
             {
@@ -61,22 +62,20 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= Html::submitButton(Yii::t('user', 'Login'), ['class' => 'btn btn-primary', 'disabled' => ((\atuin\user\helpers\SessionHelper::checkSession()) ? FALSE : TRUE)]) ?>
                 </div>
             </div>
+            <?php ActiveForm::end(); ?>
+            
             <div class="box-footer">
-
                 <?= Html::a(Yii::t("user", "Register"), ["/user/register"]) ?> /
                 <?= Html::a(Yii::t("user", "Forgot password") . "?", ["/user/forgot"]) ?> /
                 <?= Html::a(Yii::t("user", "Resend confirmation email"), ["/user/resend"]) ?>
-
+                <?php if (Yii::$app->get("authClientCollection", FALSE)): ?>
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <?= yii\authclient\widgets\AuthChoice::widget([
+                            'baseAuthUrl' => ['/user/auth/login']
+                        ]) ?>
+                    </div>
+                <?php endif; ?>
             </div>
-            <?php ActiveForm::end(); ?>
-
-            <?php if (Yii::$app->get("authClientCollection", FALSE)): ?>
-                <div class="col-lg-offset-2 col-lg-10">
-                    <?= yii\authclient\widgets\AuthChoice::widget([
-                        'baseAuthUrl' => ['/user/auth/login']
-                    ]) ?>
-                </div>
-            <?php endif; ?>
         </div>
     </div>
 </div>
