@@ -42,9 +42,9 @@ class AtuinConfig extends \atuin\skeleton\config\AtuinConfig
      */
     public function upMenu()
     {
-        $this->menuItems->add_menu_item('users_head', NULL, NULL, 'Users', 'users', NULL, 1);
-        $this->menuItems->add_menu_item('users_admin', '@web/user/admin', 'users_head', 'User List', NULL, NULL, 1);
-        $this->menuItems->add_menu_item('users_new', '@web/user/create', 'users_head', 'New User', NULL, NULL, 1);
+        $this->menuItems->add_menu_item('users_head', NULL, NULL, 'Users', 'user', NULL, 1);
+        $this->menuItems->add_menu_item('users_admin', '@web/user/admin', 'users_head', 'User List', 'users', NULL, 1);
+        $this->menuItems->add_menu_item('users_new', '@web/user/create', 'users_head', 'New User', 'user-plus', NULL, 1);
         $this->menuItems->add_menu_item('users_profile', '@web/user/view', 'users_head', 'Profile', 'male', NULL, 1);
 
         $this->menuItems->add_menu_item('roles', '@web/user/roles', NULL, 'Roles', 'user-secret', NULL, 1);
