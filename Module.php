@@ -8,7 +8,7 @@ class Module extends \atuin\skeleton\ComposerModule
 {
     protected static $_id = 'atuin-user';
 
-    protected static $_version = '0.0.1';
+    protected static $_version = '0.0.2';
 
 
     /**
